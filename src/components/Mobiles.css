@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    font-size: system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+
+}
+
+.container{
+    width:700px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+   box-shadow: 0px 0px 2px;
+}
+
+.box{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:200px;
+    min-height:50px;
+    
+}
+.box:hover{
+    background-color: #2d2a32;
+    color:white
+}
+.mobile-image{
+    margin-top: 10px;
+}
+h3{
+    margin:0;
+    padding:0
+}
+.mobile-price{
+    margin-bottom: 10px;
+}
+.buy-btn{
+    margin-bottom: 10px;
+}

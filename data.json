@@ -1,0 +1,51 @@
+{
+    "mobiles":[
+        {
+             
+            "name":"Realme 5 Pro",
+            "colour":"Sparkling Blue",
+            "ramInGb":"6",
+            "internalStorage":"64",
+            "price":"Rs.14,999"
+        },
+        {
+             
+            "name":"Redmi Note 9 Pro",
+            "colour":"Interstellar Black",
+            "ramInGb":"4",
+            "internalStorage":"64",
+            "price":"Rs.12,999"
+        },
+        {
+             
+            "name":"Samsung Galaxy A51",
+            "colour":"Prism Crush Blue",
+            "ramInGb":"6",
+            "internalStorage":"128",
+            "price":"Rs.23,999"
+        },
+        {
+             
+            "name":"OnePlus 7T Pro",
+            "colour":"Haze Blue",
+            "ramInGb":"8",
+            "internalStorage":"256",
+            "price":"Rs.43,999"
+        },
+        {
+             
+            "name":"OPPO A5s",
+            "colour":"Black",
+            "ramInGb":"4",
+            "internalStorage":"64",
+            "price":"Rs.10,990"
+        },
+        {
+            "name":"Apple iPhone 11",
+            "colour":"White",
+            "ramInGb":"6",
+            "internalStorage":"64",
+            "price":"Rs.68,300"
+        }
+    ]
+}
