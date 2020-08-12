@@ -1,7 +1,10 @@
 *{
     font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+    font-weight: normal;
 }
 .nav-bar{
+    position: fixed;
+    z-index: 100;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -18,5 +21,17 @@
 }
 .search-bar{
     background-color:white;
-    margin-left:100px
+    margin-left:300px;
+    width:300px;
+    height:45px;
+}
+.cart{
+    margin-left:450px;
+}
+.cart .MuiIconButton-root{
+    color:white
+}
+.login-btn .MuiButton-text{
+    text-transform: none;
+    color:white
 }

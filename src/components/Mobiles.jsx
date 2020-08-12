@@ -32,7 +32,7 @@ class Mobiles extends React.Component {
         return  (
                 <>
                <NavBar />
-                <Grid container justify="center" spacing={4}>
+                <Grid container justify="center">
             
                 <div className="container">
                 { this.state.mobiles.map((mobile,index)=>
@@ -44,7 +44,7 @@ class Mobiles extends React.Component {
                         </div>
                     
                         <div className="mobile-name">
-                            <h3>{mobile.name}</h3>
+                                <h3>{mobile.name}</h3>
                         </div>
                         <div className="mobile-price">
                             <h3>{mobile.price}</h3>

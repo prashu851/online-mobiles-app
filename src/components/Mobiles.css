@@ -1,18 +1,19 @@
 *{
     box-sizing: border-box;
-    font-size: system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+    font-family: system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
 
 }
 
 .container{
-    width:700px;
-    margin-top: 30px;
+    width:600px;
+    margin-top: 70px;
     flex-wrap: wrap;
     display:flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-   box-shadow: 0px 0px 2px;
+   box-shadow: 0px 0px 0.5px;
+   background-color: white;
 }
 
 .box{
@@ -25,8 +26,8 @@
     
 }
 .box:hover{
-    background-color: #2d2a32;
-    color:white
+    background-color: #1e1e24;
+    color:white;
 }
 .mobile-image{
     margin-top: 10px;
@@ -35,9 +36,9 @@ h3{
     margin:0;
     padding:0
 }
-.mobile-price{
+.mobile-price,.buy-btn{
     margin-bottom: 10px;
 }
-.buy-btn{
-    margin-bottom: 10px;
+.buy-btn .MuiButton-outlinedPrimary{
+    position:relative;
 }
