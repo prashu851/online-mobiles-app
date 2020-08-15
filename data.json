@@ -1,23 +1,23 @@
 {
     "mobiles":[
         {
-             
-            "name":"Realme 5 Pro",
+            "brand":"Realme",
+            "name":"Realme 5 Pro",    
             "colour":"Sparkling Blue",
             "ramInGb":"6",
             "internalStorage":"64",
             "price":"Rs.14,999"
         },
         {
-             
+            "brand":"Redmi",
             "name":"Redmi Note 9 Pro",
             "colour":"Interstellar Black",
             "ramInGb":"4",
             "internalStorage":"64",
             "price":"Rs.12,999"
         },
-        {
-             
+        {    
+            "brand":"Samsung",
             "name":"Samsung Galaxy A51",
             "colour":"Prism Crush Blue",
             "ramInGb":"6",
@@ -25,7 +25,7 @@
             "price":"Rs.23,999"
         },
         {
-             
+            "brand":"OnePlus",
             "name":"OnePlus 7T Pro",
             "colour":"Haze Blue",
             "ramInGb":"8",
@@ -33,7 +33,7 @@
             "price":"Rs.43,999"
         },
         {
-             
+            "brand":"Oppo",
             "name":"OPPO A5s",
             "colour":"Black",
             "ramInGb":"4",
@@ -41,11 +41,116 @@
             "price":"Rs.10,990"
         },
         {
+            "brand":"Apple",
             "name":"Apple iPhone 11",
             "colour":"White",
             "ramInGb":"6",
             "internalStorage":"64",
             "price":"Rs.68,300"
+        },
+        {
+            "brand":"Samsung",
+            "name":"Samsung Galaxy A21s",
+            "colour":"Black",
+            "ramInGb":"6",
+            "internalStorage":"64",
+            "price":"Rs.17,299"
+        },
+        {
+            "brand":"Poco",
+            "name":"Poco X2",
+            "colour":"Atlantis Blue",
+            "ramInGb":"6",
+            "internalStorage":"64",
+            "price":"Rs.17,499"
+        },
+        {
+            "brand":"Samsung",
+            "name":"Samsung Galaxy A71",
+            "colour":"Haze Crush Silver",
+            "ramInGb":"8",
+            "internalStorage":"128",
+            "price":"Rs.30,999"
+        },
+        {
+            "brand":"Apple",
+            "name":"Apple iPhone XR",
+            "colour":"Blue",
+            "ramInGb":"6",
+            "internalStorage":"128",
+            "price":"Rs.68,300"
+        },
+        {
+            "brand":"Vivo",
+            "name":"Vivo U10",
+            "colour":"Thunder Black",
+            "ramInGb":"3",
+            "internalStorage":"32",
+            "price":"Rs.10,990"
+        },
+        {
+            "brand":"Samsung",
+            "name":"Samsung Galaxy M30S",
+            "colour":"White",
+            "ramInGb":"4",
+            "internalStorage":"128",
+            "price":"Rs.17,599"
+        },
+        {
+            "brand":"Realme",
+            "name":"Realme X2 Pro",
+            "colour":"Neptune",
+            "ramInGb":"8",
+            "internalStorage":"128",
+            "price":"Rs.31,999"
+        },
+        {
+            "brand":"Oppo",
+            "name":"OPPO A31",
+            "colour":"White",
+            "ramInGb":"4",
+            "internalStorage":"64",
+            "price":"Rs.12,490"
+        },
+        {
+            "brand":"Asus",
+            "name":"Asus ROG Phone II",
+            "colour":"Black",
+            "ramInGb":"8",
+            "internalStorage":"128",
+            "price":"Rs.39,999"
+        },
+        {
+            "brand":"Vivo",
+            "name":"Vivo X50",
+            "colour":"Frost Blue",
+            "ramInGb":"8",
+            "internalStorage":"128",
+            "price":"Rs.34,990"
+        },
+        {
+            "brand":"Redmi",
+            "name":"Redmi K20 Pro",
+            "colour":"Glacier Blue",
+            "ramInGb":"6",
+            "internalStorage":"128",
+            "price":"Rs.22,999"
+        },
+        {
+            "brand":"Vivo",
+            "name":"Vivo Z1 Pro",
+            "colour":"Sonic Black",
+            "ramInGb":"4",
+            "internalStorage":"64",
+            "price":"Rs.14,990"
+        },{
+            "brand":"Oppo",
+            "name":"Oppo Reno3 Pro",
+            "colour":"White",
+            "ramInGb":"8",
+            "internalStorage":"128",
+            "price":"Rs.27,990"
         }
+
     ]
 }

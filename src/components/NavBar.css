@@ -12,21 +12,16 @@
     width:100%;
     height:60px;
     background-color:black;
-    box-shadow: 0px 0px 3px  ;
+    box-shadow: 0px 0px 3px ;
     background-color: #2d2a32;
 }
 .app-name h3{
     color:white;
     margin-left: 10px;
 }
-.search-bar{
-    background-color:white;
-    margin-left:300px;
-    width:300px;
-    height:45px;
-}
+
 .cart{
-    margin-left:450px;
+    margin-left:1000px;
 }
 .cart .MuiIconButton-root{
     color:white
