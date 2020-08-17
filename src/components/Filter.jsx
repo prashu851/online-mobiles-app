@@ -6,13 +6,14 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Divider from '@material-ui/core/Divider';
 
 class Filter extends React.Component {
+
+    onFilterChange() {
+        this.props.handleFilter()
+    }
+
     
     render(){
-        const brands=Object.values(this.props.mobileNames.reduce((r,c)=>{
-            r[c.brand]=c
-            return r
-        },
-        {}))
+        
         return(
             <div className="filter-container">
                 <h3>Brands</h3>
@@ -21,11 +22,11 @@ class Filter extends React.Component {
                 
                     <div className="checkbox">
                         
-                        {brands.map((brand,index)=>
+                        {this.props.types.map((filterType, index)=>
                         <FormGroup row >
                         <FormControlLabel
-                        control={<Checkbox key={index} color="primary" onChange={this.props.handleFilter} />}
-                        label={brand.brand}
+                        control={<Checkbox key={index} color="primary" onChange={(event) => this.props.handleFilter(event, filterType)} />}
+                        label={filterType}
                         />
                         </FormGroup>
                         )}

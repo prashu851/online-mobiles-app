@@ -11,38 +11,72 @@ class Mobiles extends React.Component {
     constructor(){
         super();
         this.state={
-            mobiles:[],
-            selectedMobiles:[]
+            selectedMobiles:[],
+            brands: [],
+            selectedBrands: []
         }
         this.mobilesData = this.mobilesData.bind(this)
         this.handleFilter = this.handleFilter.bind(this)
+        
     }
 
     
 
     mobilesData(body){
+        const brands = body.map((mobile) => mobile.brand);
+        const uniqueBrands = [...new Set(brands)];
         this.setState({
-            mobiles : body,
-            defaultData:body
+            selectedMobiles : body,
+            defaultData : body,
+            brands : uniqueBrands
         });
         
     }
-    handleFilter(e){
+    handleFilter(e, brand){
+
+        if (e.target.checked) {
+            const oldSelectedBrands = this.state.selectedBrands;
+            const newSelectedBrands = [...oldSelectedBrands, brand];
+            const allMobiles = [...this.state.defaultData];
+            const selectedMobiles = allMobiles.filter(mobile => newSelectedBrands.indexOf(mobile.brand)>-1);
+                this.setState({
+                    selectedBrands: newSelectedBrands,
+                    selectedMobiles: selectedMobiles       
+                });
+                console.log(this.state.selectedBrands)
+        }
         
+        
+        else  {
+            const oldSelectedBrands = this.state.selectedBrands;
+            const newSelectedBrands = oldSelectedBrands.filter(mobileBrand=>mobileBrand!==brand);
+            const allMobiles = [...this.state.defaultData];
+            const selectedMobiles = newSelectedBrands.length!==0 ? allMobiles.filter(mobile => newSelectedBrands.indexOf(mobile.brand)>-1):allMobiles
+                this.setState({
+                    selectedBrands: newSelectedBrands,
+                    selectedMobiles: selectedMobiles       
+                });
+        }
+
     }
+
+    
+    
     componentDidMount(){
         fetch("http://localhost:4000/mobiles")
         .then((data) => data.json())
         .then(this.mobilesData)
+    
     }
     render(){
         return  (
                 <>
+                
                <NavBar />
-               <Filter mobileNames={this.state.mobiles} handleFilter={this.handleFilter} />
+               <Filter types={this.state.brands} handleFilter={this.handleFilter} />
                 <Grid container justify="center">
                 <div className="container">
-                { this.state.mobiles.map((mobile,index)=>
+                { this.state.selectedMobiles.map((mobile,index)=>
                 <Grid item xs={3}>
                     <div className="box" key={index}>
                         <div className="mobile-image">
