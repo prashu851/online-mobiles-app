@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import NavBar from'./NavBar'
 import Filter from './Filter'
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import cloneDeep from 'lodash/cloneDeep'
 
 
 
@@ -17,6 +19,9 @@ class Mobiles extends React.Component {
         }
         this.mobilesData = this.mobilesData.bind(this)
         this.handleFilter = this.handleFilter.bind(this)
+        this.handleAscending=this.handleAscending.bind(this)
+        this.handleDescending=this.handleDescending.bind(this)
+        this.handleRelevance=this.handleRelevance.bind(this)
         
     }
 
@@ -26,8 +31,8 @@ class Mobiles extends React.Component {
         const brands = body.map((mobile) => mobile.brand);
         const uniqueBrands = [...new Set(brands)];
         this.setState({
-            selectedMobiles : body,
-            defaultData : body,
+            selectedMobiles : cloneDeep(body),
+            defaultData : cloneDeep(body),
             brands : uniqueBrands
         });
         
@@ -59,6 +64,39 @@ class Mobiles extends React.Component {
         }
 
     }
+    handleAscending(){
+        const ascendingPrices = this.state.selectedMobiles.sort((a,b) => 
+        { 
+            return b.price < a.price ?  1 
+                 : b.price > a.price ? -1 
+                 : 0;
+        })                   
+        this.setState({
+            selectedMobiles:ascendingPrices
+        })
+        console.log(this.state.selectedMobiles)
+    }
+    handleDescending(){
+        const descendingPrices = this.state.selectedMobiles.sort((a,b) => 
+        { 
+            return b.price > a.price ?  1 
+                 : b.price < a.price ? -1 
+                 : 0;
+            })                   
+        this.setState({
+            selectedMobiles:descendingPrices
+        })
+        console.log(this.state.selectedMobiles)
+    }
+    handleRelevance(){
+        
+        this.setState({
+            selectedMobiles: [...this.state.defaultData]
+            
+        })
+        console.log(this.state.defaultData)
+        console.log(this.state.selectedMobiles)
+    }
 
     
     
@@ -74,6 +112,14 @@ class Mobiles extends React.Component {
                 
                <NavBar />
                <Filter types={this.state.brands} handleFilter={this.handleFilter} />
+               <div className="sorting-btns">
+                    <ButtonGroup variant="contained" color="primary">
+                        <Button onClick={this.handleAscending}>low to high</Button>
+                        <Button onClick={this.handleDescending}>high to low</Button>
+                        <Button onClick={this.handleRelevance}>relevance</Button>
+                    </ButtonGroup>
+               </div>
+               
                 <Grid container justify="center">
                 <div className="container">
                 { this.state.selectedMobiles.map((mobile,index)=>
@@ -87,10 +133,10 @@ class Mobiles extends React.Component {
                                 <h3>{mobile.name}</h3>
                         </div>
                         <div className="mobile-price">
-                            <h3>{mobile.price}</h3>
+                            <h3>Rs.{mobile.price}</h3>
                         </div>
                         <div className="buy-btn">
-                        <Button variant="outlined" color="primary">Buy</Button>
+                        <Button variant="contained" color="primary">Buy</Button>
                         </div>
                     </div>
                        
