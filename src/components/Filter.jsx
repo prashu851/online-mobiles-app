@@ -13,7 +13,7 @@ class Filter extends React.Component {
 
     
     render(){
-        
+        console.log(this.props.types);
         return(
             <div className="filter-container">
                 <h3>Brands</h3>
@@ -22,11 +22,11 @@ class Filter extends React.Component {
                 
                     <div className="checkbox">
                         
-                        {this.props.types.map((filterType, index)=>
+                        {Object.keys(this.props.types).map((filterKey, index)=>
                         <FormGroup row >
                         <FormControlLabel
-                        control={<Checkbox key={index} color="primary" onChange={(event) => this.props.handleFilter(event, filterType)} />}
-                        label={filterType}
+                        control={<Checkbox checked={this.props.types[filterKey]} key={index} color="primary" onChange={(event) => this.props.handleFilter(event, filterKey)} />}
+                        label={filterKey}
                         />
                         </FormGroup>
                         )}
