@@ -55,6 +55,7 @@ class Mobiles extends React.Component {
                      : b.price < a.price ? -1 
                      : 0;
             }
+            
         })
         this.setState({
             brands: newBrands,
@@ -106,7 +107,7 @@ class Mobiles extends React.Component {
         })
     }
     componentDidMount(){
-        fetch("http://localhost:4000/mobiles")
+        fetch("https://my-json-server.typicode.com/prashu851/demo")
         .then((data) => data.json())
         .then(this.mobilesData)
     }
