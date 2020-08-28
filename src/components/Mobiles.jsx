@@ -119,7 +119,7 @@ class Mobiles extends React.Component {
                 <Sort selected={this.state.selected} onSortChange={this.onSortChange} />
                 
                 <div className="container">
-                <Grid container spacing={4}>
+                <Grid container spacing={3}>
                 { this.state.selectedMobiles.map((mobile,index)=>
                 <Grid item xs={3}>
                     <div className="box" key={index}>
@@ -138,7 +138,7 @@ class Mobiles extends React.Component {
                     </div>
                 </Grid>  
                 )}
-                 </Grid>
+                    </Grid>
                 </div>
                
              </>
