@@ -107,7 +107,7 @@ class Mobiles extends React.Component {
         })
     }
     componentDidMount(){
-        fetch("https://my-json-server.typicode.com/prashu851/demo")
+        fetch("http://my-json-server.typicode.com/prashu851/demo/mobiles")
         .then((data) => data.json())
         .then(this.mobilesData)
     }
@@ -115,10 +115,11 @@ class Mobiles extends React.Component {
         return  (
                 <>
                 <NavBar />
-               <Filter types={this.state.brands} handleFilter={this.handleFilter} selectedBrands={this.selectedBrands} />
-               <Sort selected={this.state.selected} onSortChange={this.onSortChange} />
-               <Grid container justify="center">
+                <Filter types={this.state.brands} handleFilter={this.handleFilter} selectedBrands={this.selectedBrands} />
+                <Sort selected={this.state.selected} onSortChange={this.onSortChange} />
+                
                 <div className="container">
+                <Grid container spacing={3}>
                 { this.state.selectedMobiles.map((mobile,index)=>
                 <Grid item xs={3}>
                     <div className="box" key={index}>
@@ -129,7 +130,7 @@ class Mobiles extends React.Component {
                                 <h3>{mobile.name}</h3>
                         </div>
                         <div className="mobile-price">
-                            <h3>Rs.{mobile.price}</h3>
+                            <h4>Rs.{mobile.price}</h4>
                         </div>
                         <div className="buy-btn">
                         <Button variant="contained" color="primary">Buy</Button>
@@ -137,8 +138,9 @@ class Mobiles extends React.Component {
                     </div>
                 </Grid>  
                 )}
+                 </Grid>
                 </div>
-                </Grid>
+               
              </>
         )
     }
