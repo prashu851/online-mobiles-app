@@ -107,7 +107,7 @@ class Mobiles extends React.Component {
         })
     }
     componentDidMount(){
-        fetch("http://my-json-server.typicode.com/prashu851/demo/mobiles")
+        fetch("https://my-json-server.typicode.com/prashu851/demo/mobiles")
         .then((data) => data.json())
         .then(this.mobilesData)
     }
