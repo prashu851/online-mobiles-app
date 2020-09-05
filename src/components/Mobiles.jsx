@@ -2,7 +2,6 @@ import React from 'react'
 import './Mobiles.css'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
-import NavBar from'./NavBar'
 import Filter from './Filter'
 import cloneDeep from 'lodash/cloneDeep'
 import Sort from './Sort'
@@ -114,10 +113,8 @@ class Mobiles extends React.Component {
     render(){
         return  (
                 <>
-                <NavBar />
                 <Filter types={this.state.brands} handleFilter={this.handleFilter} selectedBrands={this.selectedBrands} />
                 <Sort selected={this.state.selected} onSortChange={this.onSortChange} />
-                
                 <div className="container">
                 <Grid container spacing={3}>
                 { this.state.selectedMobiles.map((mobile,index)=>
