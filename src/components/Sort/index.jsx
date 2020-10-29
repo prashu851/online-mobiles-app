@@ -1,13 +1,14 @@
 import React from 'react'
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button'
-import {ASCENDING,DESCENDING,RELEVANCE} from './SortTypes'
+import {ASCENDING,DESCENDING,RELEVANCE} from '../SortTypes'
+import './Sort.css';
 
 const Sort = ({ selectedSort, onSortChange }) =>  {
-        return(
-            <div className="sorting-btns">
-                    <ButtonGroup variant="contained" color="primary">
-                    <Button
+    return(
+        <div className="sorting-btns">
+            <ButtonGroup variant="contained" color="primary">
+                <Button
                     className={selectedSort.isAscending() ?"Selected":''}
                     onClick={()=>onSortChange(ASCENDING)}>
                     low to high
@@ -22,10 +23,9 @@ const Sort = ({ selectedSort, onSortChange }) =>  {
                     onClick={()=>onSortChange(RELEVANCE)}>
                     relevance
                 </Button>
-                    </ButtonGroup>
-               </div>
-        )
-    
+            </ButtonGroup>
+        </div>
+    )
 }
 
 export default Sort

@@ -2,10 +2,10 @@ import React from 'react'
 import './Mobiles.css'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
-import Filter from './Filter'
+import Filter from '../Filter'
 import cloneDeep from 'lodash/cloneDeep'
-import Sort from './Sort'
-import {RELEVANCE} from './SortTypes'
+import Sort from '../Sort'
+import {RELEVANCE} from '../SortTypes'
 import mapValues from 'lodash/mapValues'
 
 
@@ -36,7 +36,7 @@ class Mobiles extends React.Component {
             brands : uniqueBrands,
         });
     }
-    handleFilter(checked, brand){
+    handleFilter(checked, brand) {
         const { brands: oldBrands, selectedSort, defaultData } = this.state;
         const newBrands = {...oldBrands, [brand]:checked};
         const allMobiles = [...defaultData];
@@ -53,7 +53,7 @@ class Mobiles extends React.Component {
             selectedMobiles: [...this.state.defaultData],
             brands:mapValues(this.state.brands,()=>false),
             selectedSort: RELEVANCE
-        })
+        });
     }
     onSortChange(selectedSort){
         if (selectedSort.isRelevance()) {
@@ -61,7 +61,7 @@ class Mobiles extends React.Component {
         } else {
             const sortedMobiles = this.state.selectedMobiles.sort(selectedSort.comparator)
             this.setState({
-                selectedMobiles:sortedMobiles,
+                selectedMobiles: sortedMobiles,
                 selectedSort: selectedSort
             });
         }
@@ -72,36 +72,43 @@ class Mobiles extends React.Component {
         .then(this.mobilesData)
     }
     render(){
-        return  (
-                <>
-                <Filter types={this.state.brands} handleFilter={this.handleFilter} selectedBrands={this.selectedBrands} />
-                <Sort selectedSort={this.state.selectedSort} onSortChange={this.onSortChange} />
-                <div className="container">
+        const { brands, selectedSort, selectedMobiles } = this.state;
+        return (
+            <>
+            <Filter 
+                types={brands}
+                handleFilter={this.handleFilter}
+                title="Brands"
+            />
+            <Sort 
+                selectedSort={selectedSort} 
+                onSortChange={this.onSortChange} 
+            />
+            <div className="container">
                 <Grid container spacing={3}>
-                { this.state.selectedMobiles.map((mobile,index)=>
-                <Grid item xs={3}>
-                    <div className="box" key={index}>
-                        <div className="mobile-image">
-                            <img src={require('../realme.jpg')} alt="mobile-pic" /> 
-                        </div>
-                    <div className="mobile-name">
+                { selectedMobiles.map((mobile,index)=>
+                    <Grid item xs={3} key={index}>
+                        <div className="box" key={index}>
+                            <div className="mobile-image">
+                                <img src={require('../../realme.jpg')} alt="mobile-pic" /> 
+                            </div>
+                            <div className="mobile-name">
                                 <h3>{mobile.name}</h3>
+                            </div>
+                            <div className="mobile-price">
+                                <h4>Rs.{mobile.price}</h4>
+                            </div>
+                            <div className="buy-btn">
+                                <Button variant="contained" color="primary">Buy</Button>
+                            </div>
                         </div>
-                        <div className="mobile-price">
-                            <h4>Rs.{mobile.price}</h4>
-                        </div>
-                        <div className="buy-btn">
-                        <Button variant="contained" color="primary">Buy</Button>
-                        </div>
-                    </div>
-                </Grid>  
+                    </Grid>  
                 )}
-                    </Grid>
-                </div>
-               
-             </>
+                </Grid>
+            </div>
+            </>
         )
     }
 }
 
-export default Mobiles
+export default Mobiles;

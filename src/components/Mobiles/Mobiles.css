@@ -41,17 +41,3 @@ h3,h4{
     position:relative;
     
 }
-.sorting-btns{
-display:flex;
-align-items: center;
-justify-content: center;
-margin-top: 80px;
-
-}
-.sorting-btns .Selected{
-    background-color:#2d2a32;
-    
-}
-.sorting-btns .Selected:hover{
-    background-color:#2d2a32;
-}
